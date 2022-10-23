@@ -1,26 +1,49 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+      <TshopHome></TshopHome>
+      <TshopCart></TshopCart>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import TshopHome from './components/TshopHome.vue'
+import TshopCart from './components/TshopCart.vue'
+import op from '@/assets/js/home'
+
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
+    TshopHome,
+    TshopCart,
+    
+  },
+  mounted() {
+    op()
+  },
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Poppins:wght@500&display=swap');
+  *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 10px;
+  }
+  html{
+    scroll-behavior: smooth;
+  }
+  section{
+    padding: 5rem 10%;
+  }
+  li{
+    list-style: none;
+  }
+  a{
+    text-decoration: none;
+  }
 </style>
