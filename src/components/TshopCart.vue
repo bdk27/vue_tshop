@@ -6,7 +6,7 @@
 
 <script>
     export default {
-        name: 'TshopCart.vue',
+        name: 'TshopCart',
     }
 </script>
 
