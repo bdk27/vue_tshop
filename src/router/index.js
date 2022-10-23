@@ -4,7 +4,7 @@ import TshopCart from '../pages/TshopCart.vue'
 
 const routes = [
     {
-        path: '/tshophome',
+        path: '/',
         name: 'TshopHome',
         component: TshopHome
     },

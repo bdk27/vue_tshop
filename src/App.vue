@@ -8,8 +8,6 @@
 
 <script>
 import TshopNav from './components/TshopNav.vue'
-/* import TshopHome from './pages/TshopHome'
-import TshopCart from './pages/TshopCart.vue' */
 import TshopFooter from './components/TshopFooter.vue'
 import op from '@/assets/js/home'
 
@@ -17,8 +15,6 @@ export default {
   name: 'App',
   components: {
     TshopNav,
-/*     TshopHome,
-    TshopCart, */
     TshopFooter,
   },
   mounted() {

@@ -5,7 +5,7 @@
         </div>
 
         <ul id="navbar">
-            <li><router-link to="/tshophome" class="route">首頁</router-link></li>
+            <li><router-link to="/" class="route">首頁</router-link></li>
             <li><a href="#clothes">服飾</a></li>
             <li><a href="#shoes">鞋款</a></li>
             <li><a href="#accessories">配件</a></li>
