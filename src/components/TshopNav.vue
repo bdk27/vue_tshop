@@ -5,14 +5,12 @@
         </div>
 
         <ul id="navbar">
-            <!-- <li><router-link to="/tshophome">首頁</router-link></li> -->
-            <li><a href="#home">首頁</a></li>
+            <li><router-link to="/tshophome" class="route">首頁</router-link></li>
             <li><a href="#clothes">服飾</a></li>
             <li><a href="#shoes">鞋款</a></li>
             <li><a href="#accessories">配件</a></li>
             <li><a href="#footer">資訊中心</a></li>
-            <li><a href="#cart">結帳</a></li>
-            <!-- <li><router-link to="/tshopcart">結帳</router-link></li> -->
+            <li><router-link to="/tshopcart" class="route">結帳</router-link></li>
         </ul>
 
         <i class="fa-solid fa-bars" id="menu"></i>
@@ -52,11 +50,11 @@
     .nav ul li{
         padding: 0 2rem;
     }
-    .nav ul li a{
+    .nav ul li a, .nav ul li .route{
         font-size: 1.8rem;
         color: #222;
     }
-    .nav ul li a:hover{
+    .nav ul li a:hover, .nav ul li .route:hover{
         color: #e56717;
         text-decoration: underline;
     }

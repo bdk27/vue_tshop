@@ -1,16 +1,15 @@
 <template>
   <div>
     <TshopNav></TshopNav>
-    <TshopHome></TshopHome>
-    <TshopCart></TshopCart>
+    <router-view></router-view>
     <TshopFooter></TshopFooter>
   </div>
 </template>
 
 <script>
 import TshopNav from './components/TshopNav.vue'
-import TshopHome from './components/TshopHome.vue'
-import TshopCart from './components/TshopCart.vue'
+/* import TshopHome from './pages/TshopHome'
+import TshopCart from './pages/TshopCart.vue' */
 import TshopFooter from './components/TshopFooter.vue'
 import op from '@/assets/js/home'
 
@@ -18,10 +17,9 @@ export default {
   name: 'App',
   components: {
     TshopNav,
-    TshopHome,
-    TshopCart,
+/*     TshopHome,
+    TshopCart, */
     TshopFooter,
-    
   },
   mounted() {
     op()

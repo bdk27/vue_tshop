@@ -1,18 +1,25 @@
-/* import VueRouter from 'vue-router'
-import TshopHome from '../components/TshopHome.vue'
-import TshopCart from '../components/TshopCart.vue'
+import { createWebHistory, createRouter } from "vue-router"
+import TshopHome from '../pages/TshopHome.vue'
+import TshopCart from '../pages/TshopCart.vue'
 
-export default new VueRouter({
-    routes: [
-        {
-            path: '/tshophome',
-            component: TshopHome
-        },
-        {
-            path: '/tshocart',
-            component: TshopCart
-        },
-        
-    ]
-}) */
+const routes = [
+    {
+        path: '/tshophome',
+        name: 'TshopHome',
+        component: TshopHome
+    },
+    {
+        path: '/tshopcart',
+        name: 'TshopCart',
+        component: TshopCart
+    },
+];
+
+const router = createRouter({
+    history: createWebHistory(),
+    routes,
+});
+
+export default router;
+
 

@@ -1,5 +1,4 @@
 <template>
-    <router-view>
         <div class="hero" id="hero">
             <div class="text">
                 <h3>全館商品</h3>
@@ -121,7 +120,6 @@
                 </div>
             </div>
         </section>
-    </router-view>  
 </template>
 
 <script>
@@ -280,7 +278,6 @@
                         cost: 880,
                     },
                 ],
-                quantity: 0,
             }
         },
         methods: {
@@ -574,143 +571,6 @@
     font-size: 2rem;
     color: #ec544e;
     font-weight: bold;
-}
-
-/* cart */
-.cart h4{
-    font-size: 1.4rem;
-    padding: 1rem;
-}
-.cart table{
-    width: 100%;
-    border-collapse: collapse;
-    table-layout: fixed;
-    white-space: nowrap;
-}
-.cart thead{
-    border-top: 1px solid #d6d6d6;
-    border-bottom: 1px solid #d6d6d6;
-}
-.cart thead tr td{
-    font-size: 1.6rem;
-    padding: 1rem;
-}
-.cart tbody{
-    border-bottom: 1px solid #d6d6d6;
-}
-.cart tbody tr td{
-    font-size: 1.4rem;
-    padding: 1rem;
-}
-.cart tbody:hover{
-    background: #f0f0f0;
-}
-.cart tbody tr td input{
-    width: 7rem;
-    padding: .5rem;
-}
-.cart tbody tr td img{
-    width: 10rem;
-}
-.cart tbody tr td i{
-    font-size: 1.4rem;
-    cursor: pointer;
-}
-.cart tbody tr td i:hover{
-    color: #e56717;
-}
-
-/* order */
-.form{
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-}
-.form .form-left{
-    width: 60%;
-}
-.form .form-right{
-    width: 38%;
-}
-.form h3{
-    font-size: 2rem;
-    padding: 1rem;
-    background: #f0f0f0;
-}
-.delivery{
-    padding: 1rem;
-}
-.delivery .form-group{
-    margin-bottom: 2rem;
-}
-
-.delivery .form-group select{
-    width: 100%;
-    padding: 1rem 0;
-    font-size: 1.4rem;
-    margin-top: 1rem;
-}
-.delivery .form-group option{
-    font-size: 1.4rem;
-    margin-bottom: 1rem;
-}
-.delivery label{
-    font-size: 1.6rem;
-    margin-bottom: 1rem;
-}
-.total{
-    padding: 1rem;
-}
-.fee-group{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-.fee-group p, .coupon-group p{
-    font-size: 1.6rem;
-    margin-bottom: 1rem;
-}
-.coupon-group .row{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-.coupon-group input{
-    padding: .5rem;
-    font-size: 1.4rem;
-    width: 68%;
-}
-.coupon-group button{
-    padding: .5rem 2rem;
-    font-size: 1.6rem;
-    width: 28%;
-    color: #fff;
-    background: #8e8e8e;
-    border: 0;
-    cursor: pointer;
-}
-.total .cost{
-    width: 100%;
-    font-size: 1.6rem;
-    padding: 1rem;
-    color: #fff;
-    background: #e56717;
-    border: 0;
-    border-radius: 1rem;
-    cursor: pointer;
-    margin-top: 1rem;
-}
-.code{
-    cursor: pointer;
-}
-.hide{
-    display: none;
-}
-.hide.active{
-    display: block;
-}
-.final{
-    margin-top: 3rem;
 }
 
 /* media query */
