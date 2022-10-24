@@ -28,8 +28,8 @@
                     </div>
                     <h3>${{ item.cost }}</h3>
                 </div>
-                <input type="checkbox" v-model="checkgroup" :value="item" :id="item.id" style="display: none;">
-                <label :for="item.id"><i class="fa fa-shopping-cart cart"></i></label> 
+               <!--  <input type="checkbox" v-model="checkgroup" :value="item" :id="item.id" style="display: none;"> -->
+               <i class="fa fa-shopping-cart cart" @click="getInfo(item)"></i>
             </div>
         </div>
         </section>
@@ -123,6 +123,10 @@
 </template>
 
 <script>
+    import { nanoid } from 'nanoid'
+    /* import { defineComponent } from 'vue'
+    import bus from '@libs/bus' */
+
     export default {
         name: 'TshopHome',
         data() {
@@ -130,49 +134,49 @@
                 checkgroup: [],
                 clothesData: [
                     {
-                        id: 1,
+                        id: nanoid(),
                         name: '夏日涼感襯衫-拼接',
                         image: require('../assets/img/shirt/f1.jpg'),
                         cost: 500,
                     },
                     {
-                        id: 2,
+                        id: nanoid(),
                         name: '深色涼感襯衫',
                         image: require('../assets/img/shirt/n8.jpg'),
                         cost: 650,
                     },
                     {
-                        id: 3,
+                        id: nanoid(),
                         name: '夏日涼感襯衫-花語1',
                         image: require('../assets/img/shirt/f2.jpg'),
                         cost: 500,
                     },
                     {
-                        id: 4,
+                        id: nanoid(),
                         name: '夏日涼感襯衫-花語2',
                         image: require('../assets/img/shirt/f3.jpg'),
                         cost: 500,
                     },
                     {
-                        id: 5,
+                        id: nanoid(),
                         name: '夏日涼感襯衫-花語3',
                         image: require('../assets/img/shirt/f4.jpg'),
                         cost: 500,
                     },
                     {
-                        id: 6,
+                        id: nanoid(),
                         name: '夏日涼感襯衫-花語4',
                         image: require('../assets/img/shirt/f5.jpg'),
                         cost: 500,
                     },
                     {
-                        id: 7,
+                        id: nanoid(),
                         name: '舒適短褲',
                         image: require('../assets/img/shirt/n6.jpg'),
                         cost: 450,
                     },
                     {
-                        id: 8,
+                        id: nanoid(),
                         name: '夏日涼感襯衫-地圖',
                         image: require('../assets/img/shirt/n4.jpg'),
                         cost: 650,
@@ -180,49 +184,49 @@
                 ],
                 shoesData: [
                     {
-                        id: 1,
+                        id: nanoid(),
                         name: 'NIKE Air 1',
                         image: require('../assets/img/shoes/pexels-melvin-buezo-2529148.jpg'),
                         cost: 4500,
                     },
                     {
-                        id: 2,
+                        id: nanoid(),
                         name: 'NIKE Air 2',
                         image: require('../assets/img/shoes/pexels-ox-street-6050919.jpg'),
                         cost: 2850,
                     },
                     {
-                        id: 3,
+                        id: nanoid(),
                         name: 'NIKE Air 3',
                         image: require('../assets/img/shoes/pexels-ox-street-6050924.jpg'),
                         cost: 4000,
                     },
                     {
-                        id: 4,
+                        id: nanoid(),
                         name: 'NIKE Air 4',
                         image: require('../assets/img/shoes/pexels-ox-street-5710074.jpg'),
                         cost: 5500,
                     },
                     {
-                        id: 5,
+                        id: nanoid(),
                         name: 'NIKE Air 5',
                         image: require('../assets/img/shoes/pexels-deybson-mallony-5413291.jpg'),
                         cost: 5600,
                     },
                     {
-                        id: 6,
+                        id: nanoid(),
                         name: 'NIKE Air 6',
                         image: require('../assets/img/shoes/pexels-ox-street-6540926.jpg'),
                         cost: 3500,
                     },
                     {
-                        id: 7,
+                        id: nanoid(),
                         name: 'NIKE Air 7',
                         image: require('../assets/img/shoes/pexels-ox-street-6540973.jpg'),
                         cost: 4250,
                     },
                     {
-                        id: 8,
+                        id: nanoid(),
                         name: 'NIKE Air 8',
                         image: require('../assets/img/shoes/pexels-ox-street-6540914.jpg'),
                         cost: 6500,
@@ -230,49 +234,49 @@
                 ],
                 acceData: [
                     {
-                        id: 1,
+                        id: nanoid(),
                         name: '黑耀手環',
                         image: require('../assets/img/accessories/pexels-alexey-demidov-10803602.jpg'),
                         cost: 550,
                     },
                     {
-                        id: 2,
+                        id: nanoid(),
                         name: '絢麗髮箍',
                         image: require('../assets/img/accessories/pexels-castorly-stock-3641056.jpg'),
                         cost: 680,
                     },
                     {
-                        id: 3,
+                        id: nanoid(),
                         name: '花樣扁梳',
                         image: require('../assets/img/accessories/pexels-dmitry-zvolskiy-1676126.jpg'),
                         cost: 450,
                     },
                     {
-                        id: 4,
+                        id: nanoid(),
                         name: '多功能斜背包',
                         image: require('../assets/img/accessories/pexels-ge-yonk-1152077.jpg'),
                         cost: 1250,
                     },
                     {
-                        id: 5,
+                        id: nanoid(),
                         name: '有色眼鏡',
                         image: require('../assets/img/accessories/pexels-felipe-ferreira-701877.jpg'),
                         cost: 980,
                     },
                     {
-                        id: 6,
+                        id: nanoid(),
                         name: '紅色耳飾',
                         image: require('../assets/img/accessories/pexels-romina-bm-5380900.jpg'),
                         cost: 2500,
                     },
                     {
-                        id: 7,
+                        id: nanoid(),
                         name: '深秋耳飾',
                         image: require('../assets/img/accessories/pexels-superlens-photography-11655346.jpg'),
                         cost: 1280,
                     },
                     {
-                        id: 8,
+                        id: nanoid(),
                         name: '星型手環',
                         image: require('../assets/img/accessories/pexels-the-glorious-studio-5370648.jpg'),
                         cost: 880,
@@ -281,13 +285,11 @@
             }
         },
         methods: {
-            getSum() {
-                let sum = 0;
-                for (let i=0; i<this.checkgroup.length; i++){
-                    sum += this.checkgroup[i].cost;
-                }
-                return sum;
-            },
+            /* getInfo(item) {
+                const tshopObj = {id: item.id, name: item.name, image: item.image, cost: item.cost};
+                
+                console.log(tshopObj);
+            }, */
 
         },
         

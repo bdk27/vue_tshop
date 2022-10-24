@@ -124,8 +124,19 @@
 </template>
 
 <script>
+    /* import { defineComponent, onBeforeUnmount } from 'vue'
+    import bus from '@libs/bus' */
+
     export default {
         name: 'TshopCart',
+        methods: {
+            /* tshopData() {
+
+            } */
+        },
+        mounted() {
+            /* bus.on('tshopData', ) */
+        },
     }
 </script>
 
