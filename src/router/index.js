@@ -13,6 +13,10 @@ const routes = [
         name: 'TshopCart',
         component: TshopCart
     },
+    {
+        path: '/*',
+        redirect: '/'
+    },
 ];
 
 const router = createRouter({

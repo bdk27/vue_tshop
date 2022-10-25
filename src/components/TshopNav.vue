@@ -2,6 +2,7 @@
     <section class="nav" id="nav">
         <div class="logo">
         <h1>TShop</h1> 
+        
         </div>
 
         <ul id="navbar">
@@ -10,7 +11,19 @@
             <li><a href="#shoes">鞋款</a></li>
             <li><a href="#accessories">配件</a></li>
             <li><a href="#footer">資訊中心</a></li>
-            <li><router-link to="/tshopcart" class="route">結帳</router-link></li>
+            <li v-for="item in getHomeData" :key="item.id">
+                <!-- <router-link class="route" :to="{
+                    path: '/tshopcart',
+                    query: {
+                        id: item.id,
+                        name: item.name,
+                        image: item.image,
+                        cost: item.cost
+                    }
+                }">
+                結帳</router-link> -->
+                <router-link class="route" :to="`/tshopcart?id=${item.id}&name=${item.name}&image=${item.image}&cost=${item.cost}`">結帳</router-link>
+            </li>
         </ul>
 
         <i class="fa-solid fa-bars" id="menu"></i>
@@ -19,7 +32,20 @@
 
 <script>
     export default {
-        name: 'TshopNav'
+        name: 'TshopNav',
+        data() {
+            return {
+                getHomeData: [],
+            }
+        },
+        mounted() {
+            this.bus.on('tshopObj', (data) => {
+                this.getHomeData.push(data);
+            });
+        },
+        beforeMount() {
+            this.bus.off('tshopObj');
+        }
     }
 </script>
 

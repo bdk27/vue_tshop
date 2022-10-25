@@ -124,14 +124,11 @@
 
 <script>
     import { nanoid } from 'nanoid'
-    /* import { defineComponent } from 'vue'
-    import bus from '@libs/bus' */
 
     export default {
         name: 'TshopHome',
         data() {
             return {
-                checkgroup: [],
                 clothesData: [
                     {
                         id: nanoid(),
@@ -285,11 +282,12 @@
             }
         },
         methods: {
-            /* getInfo(item) {
+            getInfo(item) {
                 const tshopObj = {id: item.id, name: item.name, image: item.image, cost: item.cost};
                 
-                console.log(tshopObj);
-            }, */
+                this.bus.emit('tshopObj', tshopObj);
+                console.log('home傳送數據了', tshopObj);
+            },
 
         },
         

@@ -7,20 +7,21 @@
 </template>
 
 <script>
-import TshopNav from './components/TshopNav.vue'
-import TshopFooter from './components/TshopFooter.vue'
-import op from '@/assets/js/home'
+  import TshopNav from './components/TshopNav.vue'
+  import TshopFooter from './components/TshopFooter.vue'
+  import op from '@/assets/js/home'
 
-export default {
-  name: 'App',
-  components: {
-    TshopNav,
-    TshopFooter,
-  },
-  mounted() {
-    op()
-  },
-}
+  export default {
+    name: 'App',
+    components: {
+      TshopNav,
+      TshopFooter,
+    },
+    mounted() {
+      op()
+    },
+    
+  }
 </script>
 
 <style>

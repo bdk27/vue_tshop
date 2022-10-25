@@ -1,6 +1,7 @@
 <template>
     <section class="cart" id="cart">
         <h4>購物車(???件)</h4>
+        <h1>{{ $route.query.id }}</h1>
         <table>
             <thead>
                 <tr>
@@ -124,19 +125,14 @@
 </template>
 
 <script>
-    /* import { defineComponent, onBeforeUnmount } from 'vue'
-    import bus from '@libs/bus' */
-
     export default {
         name: 'TshopCart',
-        methods: {
-            /* tshopData() {
-
-            } */
+        data() {
+            return {
+                finalData: [],
+            }
         },
-        mounted() {
-            /* bus.on('tshopData', ) */
-        },
+        
     }
 </script>
 

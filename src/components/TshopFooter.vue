@@ -61,7 +61,7 @@
 
 <script>
     export default {
-        name: 'TshopFooter'
+        name: 'TshopFooter',
     }
 </script>
 
