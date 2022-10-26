@@ -31,7 +31,7 @@ let op = () =>{
 
     for (let i=0; i<code.length; i++){
         code[i].onclick = function(){
-            hide[i].classList.toggle('active');
+            hide[i].classList.toggle('open');
         }
     }
 }

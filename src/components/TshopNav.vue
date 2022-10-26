@@ -12,17 +12,16 @@
             <li><a href="#accessories">配件</a></li>
             <li><a href="#footer">資訊中心</a></li>
             <li v-for="item in getHomeData" :key="item.id">
-                <!-- <router-link class="route" :to="{
-                    path: '/tshopcart',
+                <router-link class="route" :to="{
+                    name: 'TshopCart',
                     query: {
                         id: item.id,
                         name: item.name,
                         image: item.image,
-                        cost: item.cost
-                    }
+                        cost: item.cost,
+                    }    
                 }">
-                結帳</router-link> -->
-                <router-link class="route" :to="`/tshopcart?id=${item.id}&name=${item.name}&image=${item.image}&cost=${item.cost}`">結帳</router-link>
+                結帳</router-link>      
             </li>
         </ul>
 

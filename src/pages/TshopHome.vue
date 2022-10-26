@@ -284,7 +284,7 @@
         methods: {
             getInfo(item) {
                 const tshopObj = {id: item.id, name: item.name, image: item.image, cost: item.cost};
-                
+
                 this.bus.emit('tshopObj', tshopObj);
                 console.log('home傳送數據了', tshopObj);
             },

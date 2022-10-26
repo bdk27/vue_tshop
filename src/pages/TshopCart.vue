@@ -1,7 +1,6 @@
 <template>
     <section class="cart" id="cart">
         <h4>購物車(???件)</h4>
-        <h1>{{ $route.query.id }}</h1>
         <table>
             <thead>
                 <tr>
@@ -12,24 +11,16 @@
                     <td>刪除</td>
                 </tr>
             </thead>
-            <tbody>
+            <tbody >
                 <tr>
-                    <td style="cursor: pointer;"><!-- <img src="images/shirt/f1.jpg"> --></td>
-                    <td style="cursor: pointer;">夏日涼感襯衫-拼接</td>
-                    <td>500</td>
+                    <td style="cursor: pointer;"><img :src="image"></td>
+                    <td style="cursor: pointer;">{{ name }}</td>
+                    <td>{{ cost }}</td>
                     <td><input type="number" value="1"></td>
                     <td><i class="fa-solid fa-trash-can"></i></td>
                 </tr>
             </tbody>
-            <tbody>
-                <tr>
-                    <td style="cursor: pointer;"><!-- <img src="images/shirt/f1.jpg"> --></td>
-                    <td style="cursor: pointer;">夏日涼感襯衫-拼接</td>
-                    <td>500</td>
-                    <td><input type="number" value="1"></td>
-                    <td><i class="fa-solid fa-trash-can"></i></td>
-                </tr>
-            </tbody>
+            
         </table>
         
     </section>
@@ -127,10 +118,25 @@
 <script>
     export default {
         name: 'TshopCart',
+        props: ['id', 'name', 'image', 'cost'],
         data() {
             return {
-                finalData: [],
+                cartData: [],
             }
+        },
+        computed: {
+           /*  id() {
+                return this.$route.query.id
+            },
+            name() {
+                return this.$route.query.name
+            },
+            image() {
+                return this.$route.query.image
+            },
+            cost() {
+                return this.$route.query.cost
+            }, */
         },
         
     }
@@ -267,7 +273,7 @@
     .hide{
         display: none;
     }
-    .hide.active{
+    .hide.open{
         display: block;
     }
     .final{
