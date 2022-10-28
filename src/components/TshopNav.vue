@@ -11,14 +11,11 @@
             <li><a href="#shoes">鞋款</a></li>
             <li><a href="#accessories">配件</a></li>
             <li><a href="#footer">資訊中心</a></li>
-            <li v-for="item in getHomeData" :key="item.id">
+            <li>
                 <router-link class="route" :to="{
                     name: 'TshopCart',
                     query: {
-                        id: item.id,
-                        name: item.name,
-                        image: item.image,
-                        cost: item.cost,
+                        cartData: JSON.stringify(getHomeData)
                     }    
                 }">
                 結帳</router-link>      
@@ -34,7 +31,7 @@
         name: 'TshopNav',
         data() {
             return {
-                getHomeData: [],
+                getHomeData: [],         
             }
         },
         mounted() {

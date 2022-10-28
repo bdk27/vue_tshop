@@ -14,10 +14,7 @@ const routes = [
         component: TshopCart,
         props($route) {
             return {
-                id:  $route.query.id,
-                name:  $route.query.name,
-                image:  $route.query.image,
-                cost:  $route.query.cost,
+                cartData: $route.query.cartData
             }
         },
     },

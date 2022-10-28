@@ -1,6 +1,7 @@
 <template>
     <section class="cart" id="cart">
-        <h4>購物車(???件)</h4>
+        <h4>購物車({{ cartInfo.length }})件</h4>
+
         <table>
             <thead>
                 <tr>
@@ -11,11 +12,11 @@
                     <td>刪除</td>
                 </tr>
             </thead>
-            <tbody >
+            <tbody v-for="item in cartInfo" :key="item.id">
                 <tr>
-                    <td style="cursor: pointer;"><img :src="image"></td>
-                    <td style="cursor: pointer;">{{ name }}</td>
-                    <td>{{ cost }}</td>
+                    <td style="cursor: pointer;"><img :src="item.image"></td>
+                    <td style="cursor: pointer;">{{ item.name }}</td>
+                    <td>{{ item.cost }}</td>
                     <td><input type="number" value="1"></td>
                     <td><i class="fa-solid fa-trash-can"></i></td>
                 </tr>
@@ -118,26 +119,15 @@
 <script>
     export default {
         name: 'TshopCart',
-        props: ['id', 'name', 'image', 'cost'],
-        data() {
-            return {
-                cartData: [],
-            }
-        },
+        props: ['cartData'],
         computed: {
-           /*  id() {
-                return this.$route.query.id
+            cartInfo() {
+                return JSON.parse(this.cartData)
             },
-            name() {
-                return this.$route.query.name
-            },
-            image() {
-                return this.$route.query.image
-            },
-            cost() {
-                return this.$route.query.cost
-            }, */
-        },
+
+        }
+        
+      
         
     }
 </script>
