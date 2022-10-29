@@ -28,7 +28,6 @@
                     </div>
                     <h3>${{ item.cost }}</h3>
                 </div>
-               <!--  <input type="checkbox" v-model="checkgroup" :value="item" :id="item.id" style="display: none;"> -->
                <i class="fa fa-shopping-cart cart" @click="getInfo(item)"></i>
             </div>
         </div>
@@ -58,7 +57,7 @@
                         </div>
                         <h3>${{ item.cost }}</h3>
                     </div>
-                    <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
+                    <i class="fa fa-shopping-cart cart" @click="getInfo(item)"></i>
                 </div>
             </div>
         </section>
@@ -87,7 +86,7 @@
                         </div>
                         <h3>${{ item.cost }}</h3>
                     </div>
-                    <a href="#"><i class="fa fa-shopping-cart cart"></i></a>
+                    <i class="fa fa-shopping-cart cart" @click="getInfo(item)"></i>
                 </div>
             </div>
         </section>

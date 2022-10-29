@@ -12,13 +12,17 @@
             <li><a href="#accessories">配件</a></li>
             <li><a href="#footer">資訊中心</a></li>
             <li>
-                <router-link class="route" :to="{
+                <router-link class="route numBackground" :to="{
                     name: 'TshopCart',
                     query: {
                         cartData: JSON.stringify(getHomeData)
                     }    
                 }">
-                結帳</router-link>      
+                結帳</router-link>
+                <span 
+                :class="{'number': this.getHomeData.length > 0}" 
+                v-if="this.getHomeData.length > 0">
+                {{ getHomeData.length }}</span>      
             </li>
         </ul>
 
@@ -31,7 +35,8 @@
         name: 'TshopNav',
         data() {
             return {
-                getHomeData: [],         
+                getHomeData: [],
+                /* isActive: false,     */   
             }
         },
         mounted() {
@@ -84,6 +89,19 @@
         font-size: 2.5rem;
         color: #222;
         display: none;
+    }
+    .numBackground{
+        position: relative;
+    }
+    .number{
+        position: absolute;
+        background: red;
+        color: #fff;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        text-align: center;
+        font-size: 1.4rem;
     }
     @media (max-width: 768px){
         .nav ul{
