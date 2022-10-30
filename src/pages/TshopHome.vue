@@ -134,48 +134,56 @@
                         name: '夏日涼感襯衫-拼接',
                         image: require('../assets/img/shirt/f1.jpg'),
                         cost: 500,
+                        exist: false,
                     },
                     {
                         id: nanoid(),
                         name: '深色涼感襯衫',
                         image: require('../assets/img/shirt/n8.jpg'),
                         cost: 650,
+                        exist: false,
                     },
                     {
                         id: nanoid(),
                         name: '夏日涼感襯衫-花語1',
                         image: require('../assets/img/shirt/f2.jpg'),
                         cost: 500,
+                        exist: false,
                     },
                     {
                         id: nanoid(),
                         name: '夏日涼感襯衫-花語2',
                         image: require('../assets/img/shirt/f3.jpg'),
                         cost: 500,
+                        exist: false,
                     },
                     {
                         id: nanoid(),
                         name: '夏日涼感襯衫-花語3',
                         image: require('../assets/img/shirt/f4.jpg'),
                         cost: 500,
+                        exist: false,
                     },
                     {
                         id: nanoid(),
                         name: '夏日涼感襯衫-花語4',
                         image: require('../assets/img/shirt/f5.jpg'),
                         cost: 500,
+                        exist: false,
                     },
                     {
                         id: nanoid(),
                         name: '舒適短褲',
                         image: require('../assets/img/shirt/n6.jpg'),
                         cost: 450,
+                        exist: false,
                     },
                     {
                         id: nanoid(),
                         name: '夏日涼感襯衫-地圖',
                         image: require('../assets/img/shirt/n4.jpg'),
                         cost: 650,
+                        exist: false,
                     },
                 ],
                 shoesData: [
@@ -284,10 +292,13 @@
             getInfo(item) {
                 const tshopObj = {id: item.id, name: item.name, image: item.image, cost: item.cost};
 
-                this.bus.emit('tshopObj', tshopObj);
-                console.log('home傳送數據了', tshopObj);
+                if(item.id === tshopObj.id && item.exist === true) {
+                    alert('此商品已在購物車');
+                }else {
+                    this.bus.emit('tshopObj', tshopObj);
+                    item.exist = true;
+                }
             },
-
         },
         
     }

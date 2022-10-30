@@ -36,7 +36,6 @@
         data() {
             return {
                 getHomeData: [],
-                /* isActive: false,     */   
             }
         },
         mounted() {
