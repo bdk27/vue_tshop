@@ -17,7 +17,7 @@
                     <td style="cursor: pointer;"><img :src="item.image"></td>
                     <td style="cursor: pointer;">{{ item.name }}</td>
                     <td>{{ item.cost }}</td>
-                    <td><input type="number" value="1"></td>
+                    <td><input type="number" value="1" min="1"></td>
                     <td><i class="fa-solid fa-trash-can"></i></td>
                 </tr>
             </tbody>
