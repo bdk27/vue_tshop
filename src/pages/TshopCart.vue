@@ -17,7 +17,7 @@
                     <td style="cursor: pointer;"><img :src="item.image"></td>
                     <td style="cursor: pointer;">{{ item.name }}</td>
                     <td>{{ item.cost }}</td>
-                    <td><input type="number" value="1" min="1"></td>
+                    <td><input type="number" :value="1" min="1"></td>
                     <td><i class="fa-solid fa-trash-can"></i></td>
                 </tr>
             </tbody>
@@ -71,22 +71,17 @@
                 <div class="total">
                     <div class="fee-group">
                         <p>小計:</p>
-                        <p>$???</p>
+                        <p>${{ subTotal }}</p>
                     </div>
 
                     <div class="fee-group">
                         <p>運費:</p>
-                        <p>60</p>
-                    </div>
-
-                    <div class="fee-group">
-                        <p>附加碼:</p>
-                        <p>500</p>
+                        <p>${{ deliveryFee }}</p>
                     </div>
 
                     <div class="coupon-group">
-                        <p class="code">優惠代碼:</p>
-                        <div class="hide">
+                        <p class="code" @click="this.isShow = !this.isShow">優惠代碼:</p>
+                        <div v-show="isShow">
                             <div class="row">
                                 <input type="text">
                                 <button>套用</button>
@@ -94,9 +89,9 @@
                         </div>
                     </div>
 
-                    <div class="coupon-group">
-                        <p class="code">推薦代碼:</p>
-                        <div class="hide">
+                    <div class="coupon-group" >
+                        <p class="code" @click="this.isShow2 = !this.isShow2">推薦代碼:</p>
+                        <div  v-show="isShow2">
                             <div class="row">
                                 <input type="text">
                                 <button>套用</button>
@@ -106,7 +101,7 @@
                     </div>
                     <div class="fee-group final">
                         <p>合計:</p>
-                        <p>500</p>
+                        <p>${{ total }}</p>
                     </div>
 
                     <button class="cost">前往結帳</button>
@@ -120,15 +115,28 @@
     export default {
         name: 'TshopCart',
         props: ['cartData'],
+        data() {
+            return {
+                deliveryFee: 60,
+                isShow: false,
+                isShow2: false,
+            }
+        },
+        methods: {
+        },
         computed: {
             cartInfo() {
                 return JSON.parse(this.cartData)
             },
-
+            subTotal() {
+                return this.cartInfo.reduce((preValue, curValue) => {
+                    return preValue + curValue.cost;
+                }, 0);
+            },
+            total() {
+                return this.subTotal + this.deliveryFee;
+            }
         }
-        
-      
-        
     }
 </script>
 

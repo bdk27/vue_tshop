@@ -26,14 +26,14 @@ let op = () =>{
     }
 
     /* toggle */
-    let code = document.getElementsByClassName('code');
+    /* let code = document.getElementsByClassName('code');
     let hide = document.getElementsByClassName('hide');
 
     for (let i=0; i<code.length; i++){
         code[i].onclick = function(){
             hide[i].classList.toggle('open');
         }
-    }
+    } */
 }
 
 export default op
