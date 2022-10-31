@@ -135,6 +135,7 @@
                         image: require('../assets/img/shirt/f1.jpg'),
                         cost: 500,
                         exist: false,
+                        quantity: 1,
                     },
                     {
                         id: nanoid(),
@@ -142,6 +143,7 @@
                         image: require('../assets/img/shirt/n8.jpg'),
                         cost: 650,
                         exist: false,
+                        quantity: 1,
                     },
                     {
                         id: nanoid(),
@@ -149,6 +151,7 @@
                         image: require('../assets/img/shirt/f2.jpg'),
                         cost: 500,
                         exist: false,
+                        quantity: 1,
                     },
                     {
                         id: nanoid(),
@@ -156,6 +159,7 @@
                         image: require('../assets/img/shirt/f3.jpg'),
                         cost: 500,
                         exist: false,
+                        quantity: 1,
                     },
                     {
                         id: nanoid(),
@@ -163,6 +167,7 @@
                         image: require('../assets/img/shirt/f4.jpg'),
                         cost: 500,
                         exist: false,
+                        quantity: 1,
                     },
                     {
                         id: nanoid(),
@@ -170,6 +175,7 @@
                         image: require('../assets/img/shirt/f5.jpg'),
                         cost: 500,
                         exist: false,
+                        quantity: 1,
                     },
                     {
                         id: nanoid(),
@@ -177,6 +183,7 @@
                         image: require('../assets/img/shirt/n6.jpg'),
                         cost: 450,
                         exist: false,
+                        quantity: 1,
                     },
                     {
                         id: nanoid(),
@@ -184,6 +191,7 @@
                         image: require('../assets/img/shirt/n4.jpg'),
                         cost: 650,
                         exist: false,
+                        quantity: 1,
                     },
                 ],
                 shoesData: [
@@ -193,6 +201,7 @@
                         image: require('../assets/img/shoes/pexels-melvin-buezo-2529148.jpg'),
                         cost: 4500,
                         exist: false,
+                        quantity: 1,
                     },
                     {
                         id: nanoid(),
@@ -200,6 +209,7 @@
                         image: require('../assets/img/shoes/pexels-ox-street-6050919.jpg'),
                         cost: 2850,
                         exist: false,
+                        quantity: 1,
                     },
                     {
                         id: nanoid(),
@@ -207,6 +217,7 @@
                         image: require('../assets/img/shoes/pexels-ox-street-6050924.jpg'),
                         cost: 4000,
                         exist: false,
+                        quantity: 1,
                     },
                     {
                         id: nanoid(),
@@ -214,6 +225,7 @@
                         image: require('../assets/img/shoes/pexels-ox-street-5710074.jpg'),
                         cost: 5500,
                         exist: false,
+                        quantity: 1,
                     },
                     {
                         id: nanoid(),
@@ -221,6 +233,7 @@
                         image: require('../assets/img/shoes/pexels-deybson-mallony-5413291.jpg'),
                         cost: 5600,
                         exist: false,
+                        quantity: 1,
                     },
                     {
                         id: nanoid(),
@@ -228,6 +241,7 @@
                         image: require('../assets/img/shoes/pexels-ox-street-6540926.jpg'),
                         cost: 3500,
                         exist: false,
+                        quantity: 1,
                     },
                     {
                         id: nanoid(),
@@ -235,6 +249,7 @@
                         image: require('../assets/img/shoes/pexels-ox-street-6540973.jpg'),
                         cost: 4250,
                         exist: false,
+                        quantity: 1,
                     },
                     {
                         id: nanoid(),
@@ -242,6 +257,7 @@
                         image: require('../assets/img/shoes/pexels-ox-street-6540914.jpg'),
                         cost: 6500,
                         exist: false,
+                        quantity: 1,
                     },
                 ],
                 acceData: [
@@ -251,6 +267,7 @@
                         image: require('../assets/img/accessories/pexels-alexey-demidov-10803602.jpg'),
                         cost: 550,
                         exist: false,
+                        quantity: 1,
                     },
                     {
                         id: nanoid(),
@@ -258,6 +275,7 @@
                         image: require('../assets/img/accessories/pexels-castorly-stock-3641056.jpg'),
                         cost: 680,
                         exist: false,
+                        quantity: 1,
                     },
                     {
                         id: nanoid(),
@@ -265,6 +283,7 @@
                         image: require('../assets/img/accessories/pexels-dmitry-zvolskiy-1676126.jpg'),
                         cost: 450,
                         exist: false,
+                        quantity: 1,
                     },
                     {
                         id: nanoid(),
@@ -272,6 +291,7 @@
                         image: require('../assets/img/accessories/pexels-ge-yonk-1152077.jpg'),
                         cost: 1250,
                         exist: false,
+                        quantity: 1,
                     },
                     {
                         id: nanoid(),
@@ -279,6 +299,7 @@
                         image: require('../assets/img/accessories/pexels-felipe-ferreira-701877.jpg'),
                         cost: 980,
                         exist: false,
+                        quantity: 1,
                     },
                     {
                         id: nanoid(),
@@ -286,6 +307,7 @@
                         image: require('../assets/img/accessories/pexels-romina-bm-5380900.jpg'),
                         cost: 2500,
                         exist: false,
+                        quantity: 1,
                     },
                     {
                         id: nanoid(),
@@ -293,6 +315,7 @@
                         image: require('../assets/img/accessories/pexels-superlens-photography-11655346.jpg'),
                         cost: 1280,
                         exist: false,
+                        quantity: 1,
                     },
                     {
                         id: nanoid(),
@@ -300,13 +323,14 @@
                         image: require('../assets/img/accessories/pexels-the-glorious-studio-5370648.jpg'),
                         cost: 880,
                         exist: false,
+                        quantity: 1,
                     },
                 ],
             }
         },
         methods: {
             getInfo(item) {
-                const tshopObj = {id: item.id, name: item.name, image: item.image, cost: item.cost};
+                const tshopObj = {id: item.id, name: item.name, image: item.image, cost: item.cost, quantity: item.quantity};
 
                 if(item.id === tshopObj.id && item.exist === true) {
                     alert('此商品已在購物車');

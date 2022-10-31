@@ -17,7 +17,11 @@
                     <td style="cursor: pointer;"><img :src="item.image"></td>
                     <td style="cursor: pointer;">{{ item.name }}</td>
                     <td>{{ item.cost }}</td>
-                    <td><input type="number" :value="1" min="1"></td>
+                    <td>
+                        <button @click="minus(item)"><i class="fa-solid fa-minus"></i></button>
+                        <span>{{ item.quantity }}</span>
+                        <button @click="increase"><i class="fa-solid fa-plus"></i></button>
+                    </td>
                     <td><i class="fa-solid fa-trash-can"></i></td>
                 </tr>
             </tbody>
@@ -120,9 +124,17 @@
                 deliveryFee: 60,
                 isShow: false,
                 isShow2: false,
+                
             }
         },
         methods: {
+            increase(item) {
+                item.quantity ++;    
+            },
+            minus(item) {
+                item.quantity --;
+                console.log(item.quantity);
+            }
         },
         computed: {
             cartInfo() {
@@ -130,12 +142,13 @@
             },
             subTotal() {
                 return this.cartInfo.reduce((preValue, curValue) => {
-                    return preValue + curValue.cost;
+                    return preValue + curValue.cost * curValue.quantity;
                 }, 0);
             },
             total() {
                 return this.subTotal + this.deliveryFee;
-            }
+            },
+            
         }
     }
 </script>
@@ -183,6 +196,17 @@
     }
     .cart tbody tr td i:hover{
         color: #e56717;
+    }
+    .cart tbody tr td button {
+        width: 25px;
+        height: 25px;
+        border: 1px solid transparent;
+        outline: none;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+    .cart tbody tr td span{
+        padding: 10px;
     }
 
     /* order */
