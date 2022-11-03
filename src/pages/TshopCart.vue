@@ -20,9 +20,9 @@
                     <td>
                         <button @click="minus(item)"><i class="fa-solid fa-minus"></i></button>
                         <span>{{ item.quantity }}</span>
-                        <button @click="increase"><i class="fa-solid fa-plus"></i></button>
+                        <button @click="increase(item)"><i class="fa-solid fa-plus"></i></button>
                     </td>
-                    <td><i class="fa-solid fa-trash-can"></i></td>
+                    <td><i class="fa-solid fa-trash-can" ></i></td>
                 </tr>
             </tbody>
             
@@ -121,35 +121,49 @@
         props: ['cartData'],
         data() {
             return {
+                cartInfo: [],
                 deliveryFee: 60,
                 isShow: false,
                 isShow2: false,
-                
+                counter: 1,
             }
         },
         methods: {
             increase(item) {
-                item.quantity ++;    
+                item.quantity ++;
             },
             minus(item) {
-                item.quantity --;
-                console.log(item.quantity);
-            }
+                 if(item.quantity > 1) {
+                    item.quantity --;
+                }
+            },
+            /* deleteCart(id) {  
+                this.cartInfo = this.cartInfo.filter((cartItem) => {
+                    return cartItem.id !== id;
+                });
+                console.log(this.cartInfo);
+            }, */
+
         },
         computed: {
-            cartInfo() {
+            /* cartInfo() {
                 return JSON.parse(this.cartData)
-            },
+            }, */
             subTotal() {
                 return this.cartInfo.reduce((preValue, curValue) => {
-                    return preValue + curValue.cost * curValue.quantity;
+                    return preValue + curValue.cost * curValue.quantity;        
                 }, 0);
             },
             total() {
                 return this.subTotal + this.deliveryFee;
             },
             
-        }
+        },
+        mounted() {
+            this.cartInfo = JSON.parse(this.cartData);
+        },
+       
+       
     }
 </script>
 

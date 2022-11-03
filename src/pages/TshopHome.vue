@@ -330,9 +330,10 @@
         },
         methods: {
             getInfo(item) {
-                const tshopObj = {id: item.id, name: item.name, image: item.image, cost: item.cost, quantity: item.quantity};
+                /* const tshopObj = {id: item.id, name: item.name, image: item.image, cost: item.cost, quantity: item.quantity}; */
+                const tshopObj = item;
 
-                if(item.id === tshopObj.id && item.exist === true) {
+                if(item.exist === true) {
                     alert('此商品已在購物車');
                 }else {
                     this.bus.emit('tshopObj', tshopObj);
