@@ -22,7 +22,7 @@
                         <span>{{ item.quantity }}</span>
                         <button @click="increase(item)"><i class="fa-solid fa-plus"></i></button>
                     </td>
-                    <td><i class="fa-solid fa-trash-can" ></i></td>
+                    <td><i class="fa-solid fa-trash-can" @click="deleteCart(item.id)"></i></td>
                 </tr>
             </tbody>
             
@@ -137,12 +137,12 @@
                     item.quantity --;
                 }
             },
-            /* deleteCart(id) {  
+            deleteCart(id) {  
                 this.cartInfo = this.cartInfo.filter((cartItem) => {
                     return cartItem.id !== id;
                 });
                 console.log(this.cartInfo);
-            }, */
+            },
 
         },
         computed: {
