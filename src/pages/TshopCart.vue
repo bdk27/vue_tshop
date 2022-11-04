@@ -125,7 +125,6 @@
                 deliveryFee: 60,
                 isShow: false,
                 isShow2: false,
-                counter: 1,
             }
         },
         methods: {
@@ -133,15 +132,17 @@
                 item.quantity ++;
             },
             minus(item) {
-                 if(item.quantity > 1) {
+                if(item.quantity > 1) {
                     item.quantity --;
                 }
             },
             deleteCart(id) {  
-                this.cartInfo = this.cartInfo.filter((cartItem) => {
-                    return cartItem.id !== id;
-                });
-                console.log(this.cartInfo);
+                if(confirm('確定刪除此商品嗎?')) {
+                    this.cartInfo = this.cartInfo.filter((cartItem) => {
+                        return cartItem.id !== id;
+                    });
+                    this.bus.emit('cartId', id);
+                }
             },
 
         },

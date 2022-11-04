@@ -42,9 +42,15 @@
             this.bus.on('tshopObj', (data) => {
                 this.getHomeData.push(data);
             });
+            this.bus.on('cartId', (id) => {
+                this.getHomeData = this.getHomeData.filter((cartItem) => {
+                    return cartItem.id !== id;
+                });
+            });
         },
         beforeMount() {
             this.bus.off('tshopObj');
+            this.bus.off('cartId');
         }
     }
 </script>
