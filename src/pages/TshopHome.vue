@@ -128,6 +128,7 @@
         name: 'TshopHome',
         data() {
             return {
+                /* tshopArr: JSON.parse(localStorage.getItem('tshopArr')) || [], */
                 clothesData: [
                     {
                         id: nanoid(),
@@ -332,6 +333,7 @@
             getInfo(item) {
                 /* const tshopObj = {id: item.id, name: item.name, image: item.image, cost: item.cost, quantity: item.quantity}; */
                 const tshopObj = item;
+                /* this.tshopArr.push(item); */
 
                 if(item.exist === true) {
                     alert('此商品已在購物車');
@@ -340,6 +342,14 @@
                     item.exist = true;
                 }
             },
+        },
+        watch: {
+            tshopArr: {
+                deep: true,
+                handler(value) {
+                    localStorage.setItem('tshopArr', JSON.stringify(value));
+                },
+            }
         },
         
     }

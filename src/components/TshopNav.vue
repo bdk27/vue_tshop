@@ -6,7 +6,7 @@
         </div>
 
         <ul id="navbar">
-            <li><router-link to="/" class="route">首頁</router-link></li>
+            <li><router-link class="route" to="/">首頁</router-link></li>
             <li><a href="#clothes">服飾</a></li>
             <li><a href="#shoes">鞋款</a></li>
             <li><a href="#accessories">配件</a></li>
@@ -47,10 +47,19 @@
                     return cartItem.id !== id;
                 });
             });
+            this.bus.on('count', (data) => {
+                this.getHomeData.forEach((cartItem) => {
+                    if(cartItem.id === data.id) {
+                        cartItem.quantity = data.quantity;
+                    }
+                });
+            });
+          
         },
         beforeMount() {
             this.bus.off('tshopObj');
             this.bus.off('cartId');
+            this.bus.off('count');
         }
     }
 </script>

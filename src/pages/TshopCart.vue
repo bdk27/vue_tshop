@@ -121,7 +121,7 @@
         props: ['cartData'],
         data() {
             return {
-                cartInfo: [],
+                cartInfo: JSON.parse(localStorage.getItem('cartInfo')) || [],
                 deliveryFee: 60,
                 isShow: false,
                 isShow2: false,
@@ -130,10 +130,12 @@
         methods: {
             increase(item) {
                 item.quantity ++;
+                this.bus.emit('count', item);
             },
             minus(item) {
                 if(item.quantity > 1) {
                     item.quantity --;
+                    this.bus.emit('count', item);
                 }
             },
             deleteCart(id) {  
@@ -160,10 +162,17 @@
             },
             
         },
+        watch: {
+            cartInfo: {
+                deep: true,
+                handler(value) {
+                    localStorage.setItem('cartInfo', JSON.stringify(value));
+                },
+            }
+        },
         mounted() {
             this.cartInfo = JSON.parse(this.cartData);
-        },
-       
+        }  
        
     }
 </script>

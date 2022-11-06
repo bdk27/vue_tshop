@@ -6,7 +6,7 @@ const routes = [
     {
         path: '/',
         name: 'TshopHome',
-        component: TshopHome
+        component: TshopHome,
     },
     {
         path: '/tshopcart',
