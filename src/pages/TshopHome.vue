@@ -122,78 +122,81 @@
 </template>
 
 <script>
-    import { nanoid } from 'nanoid'
+    import {clothesData, shoesData, acceData} from '../assets/js/items'
 
     export default {
         name: 'TshopHome',
         data() {
             return {
-                /* tshopArr: JSON.parse(localStorage.getItem('tshopArr')) || [], */
-                clothesData: [
-                    {
-                        id: nanoid(),
-                        name: '夏日涼感襯衫-拼接',
-                        image: require('../assets/img/shirt/f1.jpg'),
-                        cost: 500,
-                        exist: false,
-                        quantity: 1,
-                    },
-                    {
-                        id: nanoid(),
-                        name: '深色涼感襯衫',
-                        image: require('../assets/img/shirt/n8.jpg'),
-                        cost: 650,
-                        exist: false,
-                        quantity: 1,
-                    },
-                    {
-                        id: nanoid(),
-                        name: '夏日涼感襯衫-花語1',
-                        image: require('../assets/img/shirt/f2.jpg'),
-                        cost: 500,
-                        exist: false,
-                        quantity: 1,
-                    },
-                    {
-                        id: nanoid(),
-                        name: '夏日涼感襯衫-花語2',
-                        image: require('../assets/img/shirt/f3.jpg'),
-                        cost: 500,
-                        exist: false,
-                        quantity: 1,
-                    },
-                    {
-                        id: nanoid(),
-                        name: '夏日涼感襯衫-花語3',
-                        image: require('../assets/img/shirt/f4.jpg'),
-                        cost: 500,
-                        exist: false,
-                        quantity: 1,
-                    },
-                    {
-                        id: nanoid(),
-                        name: '夏日涼感襯衫-花語4',
-                        image: require('../assets/img/shirt/f5.jpg'),
-                        cost: 500,
-                        exist: false,
-                        quantity: 1,
-                    },
-                    {
-                        id: nanoid(),
-                        name: '舒適短褲',
-                        image: require('../assets/img/shirt/n6.jpg'),
-                        cost: 450,
-                        exist: false,
-                        quantity: 1,
-                    },
-                    {
-                        id: nanoid(),
-                        name: '夏日涼感襯衫-地圖',
-                        image: require('../assets/img/shirt/n4.jpg'),
-                        cost: 650,
-                        exist: false,
-                        quantity: 1,
-                    },
+                tshopArr: [],
+                clothesData,
+                shoesData,
+                acceData,
+               /*  clothesData: [
+                {
+                    id: nanoid(),
+                    name: '夏日涼感襯衫-拼接',
+                    image: require('../assets/img/shirt/f1.jpg'),
+                    cost: 500,
+                    exist: false,
+                    quantity: 1,
+                },
+                {
+                    id: nanoid(),
+                    name: '深色涼感襯衫',
+                    image: require('../assets/img/shirt/n8.jpg'),
+                    cost: 650,
+                    exist: false,
+                    quantity: 1,
+                },
+                {
+                    id: nanoid(),
+                    name: '夏日涼感襯衫-花語1',
+                    image: require('../assets/img/shirt/f2.jpg'),
+                    cost: 500,
+                    exist: false,
+                    quantity: 1,
+                },
+                {
+                    id: nanoid(),
+                    name: '夏日涼感襯衫-花語2',
+                    image: require('../assets/img/shirt/f3.jpg'),
+                    cost: 500,
+                    exist: false,
+                    quantity: 1,
+                },
+                {
+                    id: nanoid(),
+                    name: '夏日涼感襯衫-花語3',
+                    image: require('../assets/img/shirt/f4.jpg'),
+                    cost: 500,
+                    exist: false,
+                    quantity: 1,
+                },
+                {
+                    id: nanoid(),
+                    name: '夏日涼感襯衫-花語4',
+                    image: require('../assets/img/shirt/f5.jpg'),
+                    cost: 500,
+                    exist: false,
+                    quantity: 1,
+                },
+                {
+                    id: nanoid(),
+                    name: '舒適短褲',
+                    image: require('../assets/img/shirt/n6.jpg'),
+                    cost: 450,
+                    exist: false,
+                    quantity: 1,
+                },
+                {
+                    id: nanoid(),
+                    name: '夏日涼感襯衫-地圖',
+                    image: require('../assets/img/shirt/n4.jpg'),
+                    cost: 650,
+                    exist: false,
+                    quantity: 1,
+                },
                 ],
                 shoesData: [
                     {
@@ -326,29 +329,19 @@
                         exist: false,
                         quantity: 1,
                     },
-                ],
+                ], */
             }
         },
         methods: {
             getInfo(item) {
-                /* const tshopObj = {id: item.id, name: item.name, image: item.image, cost: item.cost, quantity: item.quantity}; */
                 const tshopObj = item;
-                /* this.tshopArr.push(item); */
-
+            
                 if(item.exist === true) {
                     alert('此商品已在購物車');
                 }else {
-                    this.bus.emit('tshopObj', tshopObj);
-                    item.exist = true;
-                }
-            },
-        },
-        watch: {
-            tshopArr: {
-                deep: true,
-                handler(value) {
-                    localStorage.setItem('tshopArr', JSON.stringify(value));
-                },
+                    this.bus.emit('tshopObj',  tshopObj);
+                    
+                }  
             }
         },
         

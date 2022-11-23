@@ -149,8 +149,8 @@
 
         },
         computed: {
-            /* cartInfo() {
-                return JSON.parse(this.cartData)
+           /*  cartInfo() {
+                return JSON.parse(this.cartData)            
             }, */
             subTotal() {
                 return this.cartInfo.reduce((preValue, curValue) => {
