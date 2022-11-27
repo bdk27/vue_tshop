@@ -22,7 +22,7 @@
                 <span 
                 :class="{'number': this.getHomeData.length > 0}" 
                 v-if="this.getHomeData.length > 0">
-                {{ getHomeData.length }}</span>      
+                {{ this.getHomeData.length }}</span>      
             </li>
         </ul>
 
