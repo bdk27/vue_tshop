@@ -27,6 +27,8 @@ const routes = [
 const router = createRouter({
     history: createWebHistory(),
     routes,
+    mode: 'hash',
+    base: '/vue_tshop',
     scrollBehavior() {
         return {left: 0, top: 0};
     },
