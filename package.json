@@ -2,6 +2,7 @@
   "name": "vue_shopping",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://bdk27.github.io/vue_tshop/",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
