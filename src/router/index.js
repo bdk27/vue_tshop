@@ -1,4 +1,4 @@
-import { createWebHistory, createRouter } from "vue-router"
+import { createWebHashHistory, createRouter } from "vue-router"
 import TshopHome from '../pages/TshopHome.vue'
 import TshopCart from '../pages/TshopCart.vue'
 
@@ -25,9 +25,8 @@ const routes = [
 ];
 
 const router = createRouter({
-    history: createWebHistory(),
+    history: createWebHashHistory(),
     routes,
-    mode: 'hash',
     base: '/vue_tshop',
     scrollBehavior() {
         return {left: 0, top: 0};
